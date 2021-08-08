@@ -64,8 +64,12 @@ def predict():
     # scale the input
     scaled_payload = scale(inference_payload)
     # get an output prediction from the pretrained model, clf
+    logging.basicConfig(
+        filename="./output_txt_files/docker_out.txt", level=logging.INFO
+    )
     prediction = list(clf.predict(scaled_payload))
     # TO DO:  Log the output prediction value
+    LOG.info(f"Output prediction: {prediction}")
     return jsonify({"prediction": prediction})
 
 
