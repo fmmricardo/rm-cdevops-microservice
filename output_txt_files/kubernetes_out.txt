@@ -1,1 +1,24 @@
-<paste log output from Kubernetes-mediated prediction, here>
+# Ran the kubernetes script on terminal
+
+➜ ./run_kubernetes.sh
+Step1 done
+Flag --generator has been deprecated, has no effect and will be removed in the future.
+Error from server (AlreadyExists): pods "rm-api" already exists
+Step2 done
+NAME     READY   STATUS    RESTARTS   AGE
+rm-api   1/1     Running   0          28s
+Step3 done
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+Handling connection for 8000
+
+
+# Ran the perdiction script on terminal
+➜ ./make_prediction.sh
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}

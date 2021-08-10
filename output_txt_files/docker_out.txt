@@ -1,23 +1,22 @@
-<paste log output from Docker prediction, here>
-172.17.0.1 - - [08/Aug/2021 20:05:16] "GET / HTTP/1.1" 200 -
-172.17.0.1 - - [08/Aug/2021 20:05:16] "GET /favicon.ico HTTP/1.1" 404 -
-[2021-08-08 20:05:47,203] INFO in app: JSON payload:
+# Ran the app in terminal:
+
+[2021-08-10 06:07:57,842] INFO in app: JSON payload:
 {'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
-[2021-08-08 20:05:47,217] INFO in app: Inference payload DataFrame:
+[2021-08-10 06:07:57,861] INFO in app: Inference payload DataFrame:
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-[2021-08-08 20:05:47,232] INFO in app: Scaling Payload:
+[2021-08-10 06:07:57,878] INFO in app: Scaling Payload:
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-[2021-08-08 20:05:47,239] INFO in app: Output prediction: [20.35373177134412]
-172.17.0.1 - - [08/Aug/2021 20:05:47] "POST /predict HTTP/1.1" 200 -
-[2021-08-08 20:06:13,401] INFO in app: JSON payload:
-{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
-[2021-08-08 20:06:13,424] INFO in app: Inference payload DataFrame:
-   CHAS     RM    TAX  PTRATIO      B  LSTAT
-0     0  6.575  296.0     15.3  396.9   4.98
-[2021-08-08 20:06:13,442] INFO in app: Scaling Payload:
-   CHAS     RM    TAX  PTRATIO      B  LSTAT
-0     0  6.575  296.0     15.3  396.9   4.98
-[2021-08-08 20:06:13,448] INFO in app: Output prediction: [20.35373177134412]
-172.17.0.1 - - [08/Aug/2021 20:06:13] "POST /predict HTTP/1.1" 200 -
+[2021-08-10 06:07:57,889] INFO in app: Output prediction: [20.35373177134412]
+172.17.0.1 - - [10/Aug/2021 06:07:57] "POST /predict HTTP/1.1" 200 -
+
+
+# Made prediction in another terminal tab
+➜ ./make_prediction.sh
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
